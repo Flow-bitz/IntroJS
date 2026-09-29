@@ -25,5 +25,13 @@ let button2 = document.getElementById("changeBtn");
 let Head1 = document.getElementById("head1");
 
 button2.addEventListener("click", function () { 
-    Head1.textContent = "JavaScript Events"; 
+    Head1.textContent = "JavaScript Events";
+});
+
+// Double click function
+
+let button02 = document.getElementById("changeBtn2")
+
+button02.addEventListener("dblclick", function () { 
+    alert("Double Click Detected!"); 
 });
