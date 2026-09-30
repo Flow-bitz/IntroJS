@@ -6,12 +6,12 @@
 
 // USING EVENTS WITH FUNCTIONS
 
-// // Method 1: Using an Event Property
-// let button = document.getElementById("btn"); 
+// Method 1: Using an Event Property
+let button = document.getElementById("btn"); 
 
-// button.onclick = function () { 
-//     alert("Button Clicked!"); 
-// };
+button.onclick = function () { 
+    alert("Button Clicked!"); 
+};
 
 // Method 2: Using addEventListener() (Recommended)
 let button1 = document.getElementById("btn"); 
@@ -28,10 +28,89 @@ button2.addEventListener("click", function () {
     Head1.textContent = "JavaScript Events";
 });
 
-// Double click function
+// Double click Events
 
 let button02 = document.getElementById("changeBtn2")
 
-button02.addEventListener("dblclick", function () { 
+button2.addEventListener("dblclick", function () { 
     alert("Double Click Detected!"); 
+});
+
+
+// MOUSE EVENTS
+
+// Mouse over
+let image = document.getElementById("photo"); 
+
+image.addEventListener("mouseover", function () { 
+    image.style.border = "5px solid blue"; 
+});
+
+// Mouse out
+image.addEventListener("mouseout", function () { 
+    image.style.border = ""; 
+});
+
+// Mouse move
+document.addEventListener("mousemove", function () { 
+    console.log("Mouse is moving"); 
+});
+
+
+// Practical Example: Hover Effect
+
+let message = document.getElementById("message");
+
+message.addEventListener("mouseover", function () { 
+    message.style.color = "red"; 
+}); 
+
+message.addEventListener("mouseout", function () { 
+    message.style.color = "black"; 
+});
+
+
+
+// KEYBOARD EVENTS
+// Keyboard events occur when users press keys.
+
+// Key down
+document.addEventListener("keydown", function () { 
+    console.log("A key was pressed"); 
+});
+
+// Key up
+document.addEventListener("keyup", function () { 
+    console.log("Key released"); 
+});
+
+
+// Display Typed Characters
+let input = document.getElementById("username"); 
+
+input.addEventListener("keyup", function () { 
+    console.log(input.value); 
+});
+//Every key press updates the console with the current input.
+
+
+// FORM EVENTS
+
+let form = document.getElementById("myForm"); 
+
+form.addEventListener("submit", function(event){ 
+    event.preventDefault(); 
+    alert("Form Submitted!"); 
+});
+
+// Why preventDefault()?
+// Normally, submitting a form reloads the page.
+// event.preventDefault() stops that behavior so you can validate the data or perform other actions first.
+
+
+// Detecting Which Key Was Pressed
+document.addEventListener("keydown", function(event){
+
+    console.log(event.key);
+
 });
